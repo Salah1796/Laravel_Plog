@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2018 at 10:12 PM
+-- Generation Time: Nov 30, 2018 at 10:46 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -40,8 +40,13 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'ass', '2018-11-19 22:00:00', '2018-11-05 22:00:00'),
-(2, 'nxasdnas ', '2018-11-30 18:59:30', '2018-11-30 18:59:30');
+(3, 'web Development', '2018-11-30 21:29:54', '2018-11-30 21:29:54'),
+(4, 'mobile Development', '2018-11-30 21:31:08', '2018-11-30 21:31:08'),
+(5, 'web Design', '2018-11-30 21:31:08', '2018-11-30 21:31:08'),
+(6, 'Machin Learning', '2018-11-30 21:32:37', '2018-11-30 21:32:37'),
+(7, 'Data minng', '2018-11-30 21:32:37', '2018-11-30 21:32:37'),
+(8, 'Game Development', '2018-11-30 21:33:10', '2018-11-30 21:33:10'),
+(9, 'Graphic Design', '2018-11-30 21:33:10', '2018-11-30 21:33:10');
 
 -- --------------------------------------------------------
 
@@ -77,7 +82,8 @@ INSERT INTO `comments` (`id`, `body`, `upVote`, `downVote`, `post_id`, `user_id`
 (15, '111111111', 0, 0, 10, 1, '2018-11-30 14:07:42', '2018-11-30 14:07:53'),
 (16, 'cssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscssssssssssssssssssscsssssssssssssssssss', 0, 0, 10, 1, '2018-11-30 14:15:53', '2018-11-30 14:15:53'),
 (17, 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', 0, 0, 6, 1, '2018-11-30 16:29:01', '2018-11-30 16:29:01'),
-(18, 'asmadmdsf', 0, 0, 7, 1, '2018-11-30 16:53:17', '2018-11-30 16:53:17');
+(18, 'asmadmdsf', 0, 0, 7, 1, '2018-11-30 16:53:17', '2018-11-30 16:53:17'),
+(19, 'think youe', 0, 0, 12, 1, '2018-11-30 19:37:55', '2018-11-30 19:37:55');
 
 -- --------------------------------------------------------
 
@@ -138,11 +144,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `body`, `user_id`, `categorie_id`, `created_at`, `updated_at`) VALUES
-(6, 'cc', 'ascsacasacs', 2, 1, '2018-11-30 12:25:11', '2018-11-30 12:25:11'),
-(7, 'csac', '<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffff<dsacasfcccccccccccccccccccccccccccccccccffffffffffffffffffffffffffv', 2, 1, '2018-11-30 13:03:43', '2018-11-30 13:03:43'),
-(8, 'scsacas', '<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>v', 2, 1, '2018-11-30 13:38:51', '2018-11-30 13:38:51'),
-(10, 'xaax', '333333333333333', 1, 1, '2018-11-30 14:04:13', '2018-11-30 14:06:04'),
-(11, 'mQD ,D', 'W,DCWANCFJAL', 1, 2, '2018-11-30 16:59:51', '2018-11-30 16:59:51');
+(12, 'What is Mobile Decelopment?', 'What is Mobile Development???\r\nHow I start it??', 1, 4, '2018-11-30 19:35:17', '2018-11-30 19:35:17'),
+(13, 'web Development Learning Path', 'Front End:\r\nHtml Css Js  \r\nBack end:\r\nphp', 1, 3, '2018-11-30 19:37:21', '2018-11-30 19:37:34'),
+(14, 'What is Game Development', 'what is Game development   ??\r\nHow Can I be develop games?', 1, 8, '2018-11-30 19:43:28', '2018-11-30 19:43:28');
 
 -- --------------------------------------------------------
 
@@ -246,12 +250,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -261,7 +265,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `reports`
 --

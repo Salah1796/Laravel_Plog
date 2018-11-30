@@ -10,10 +10,7 @@
             <!-- Blog Entries Column -->
             <div class="col-md-8">
 
-
-
-
-         <br>
+                <br>
 
           <!-- Blog Post -->
       
@@ -106,5 +103,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-@endsection
+    </div>
+
+    @endsection
 
