@@ -10,6 +10,8 @@ class PostController extends Controller
     public function post($id)
     {
 
+
+
         $post=Post::find($id);
         
         return view('blog-post.index',compact('post'));
@@ -42,7 +44,7 @@ class PostController extends Controller
 
 
 
-return redirect('/');
+  return redirect('/');
 
        // return 'sav post!!!!!!!!!';
 
@@ -51,46 +53,51 @@ return redirect('/');
 
     }
     public function  delPost($id)
-    {
-        if(Post::find($id)->user_id!=Auth::User()->id)
+     {
+        if(Post::find($id)->user_id==Auth::User()->id || Auth::User()->Role=='Admin')
         {
-            echo '<script>alert("You Cant Update This comment")</script>';
+            Post::find($id)->delete();
+
             return redirect('/');
 
+           
         }
 
-        Post::find($id)->delete();
+        echo '<script>alert("You Cant Update This Post")</script>';
+       return redirect('/');
 
-        return redirect('/');
+         
 
     }
     public function  upPost(Request $request,$id)
 
     {
 
-        if(Post::find($id)->user_id!=Auth::User()->id)
+        if(Post::find($id)->user_id==Auth::User()->id)
         {
-            echo '<script>alert("You Cant Update This comment")</script>';
+
+            if ($request->isMethod('POST')) {
+
+                $post = Post::find($id);
+                $post->title=$request['title'];
+     
+                $post->body=$request['content'];
+     
+                $post->save();
             return redirect('/');
-
+     
+     
+             }
+     
+     
+     
+             $post = Post::find($id);
+             return view('blog-home.update_Post', compact('post'));
+     
+            
         }
-       if ($request->isMethod('POST')) {
-
-           $post = Post::find($id);
-           $post->title=$request['title'];
-
-           $post->body=$request['content'];
-
-           $post->save();
-            return redirect('/');
-
-
-        }
-
-
-
-        $post = Post::find($id);
-        return view('blog-home.update_Post', compact('post'));
+        echo '<script>alert("You Cant Update This Post")</script>';
+       return redirect('/');
 
 
     }
