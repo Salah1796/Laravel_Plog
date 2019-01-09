@@ -2,34 +2,53 @@
 @extends('layouts.app')
     <!-- Navigation -->
     @section('content')
+        <header class="masthead"   style="background-image: url({{asset('img/home-bg.jpg')}})">
+            <div class="overlay"></div>
 
+            <div class="container">
+
+
+                <div class="col-lg-8 col-md-10 mx-auto">
+
+
+                    <div class="site-heading">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
     <!-- Page Content -->
-    <div class="container" style="width: 100%">
+        <div class="container">
 
         <div class="row">
 
         <!-- Post Content Column -->
-        <div class="col-lg-8">
+            <div class="col-lg-8">
           <!-- Title -->
-        <h1 class="mt-4">{{$post->title}}</h1><small style="color:red"># {{$post->categorie->name}}</small>
+                <h1 class="mt-4">{{$post->title}}</h1>
+
       
 
           <!-- Author -->
-          <p class="lead">
+          <h5 style="color: #606f7b">
             by
-              <a href="{{url('User_info/'.$post->user->id)}}">{{$post->user->name}}</a>
-          </p>
+              <a  class="lead" style="color: blue" href="{{url('User_info/'.$post->user->id)}}">{{$post->user->name}}</a>
+          </h5>
 
           <hr>
 
           <!-- Date/Time -->
-          <p>  Posted on: &nbsp; {{$post->created_at->toFormattedDateString()}}</p>
+                <p>Posted on  &nbsp; {{$post->created_at->toFormattedDateString()}}</p>
 
+                <hr>
 
+                <!-- Preview Image -->
 
-          <hr>
-
-            <br> <br>
+                <img  class="img-fluid rounded" src="{{asset('img/contact-bg.jpg')}}" alt="##">
+                <hr>
             <!-- Post Content -->
             <div class="card mb-4">
 
@@ -37,8 +56,9 @@
 
                     @if($post->user->id==Auth::User()->id)
 
-                        <a style=" margin-left:10px; float: right;font-size: 15px" href="{{url('delPost/'.$post->id)}}">Delete</a>
-                        <a style="  float: right;font-size: 15px" href="{{url('upPost/'.$post->id)}}">Edit</a>
+                         <a style=" margin-left:10px; float: right;font-size: 15px" href="{{url('delPost/'.$post->id)}}">Delete</a>
+                       <a style="  float: right;font-size: 15px" href="{{url('upPost/'.$post->id)}}">Edit</a>
+
                     @endif
 
                     <br>
@@ -47,8 +67,11 @@
 
 
                     </p>
-                </div>
-            </div>
+
+
+                                      </div>
+
+                 </div>
 
 
 <hr><br>

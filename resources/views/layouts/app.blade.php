@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Auth\User;
+
 ?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -19,42 +20,68 @@ use Illuminate\Foundation\Auth\User;
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
 
 
     <!-- Styles -->
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="../blog-home/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/clean-blog.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-           
-        <nav class=" navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
+                <!-- Left Side Of Navbar -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <a class="navbar-brand" href="{{ route('admin') }}">
-                  &nbsp; &nbsp; Admin
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fa fa-bars"></i>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
+                <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
+
+               <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                -->
+
+                   <!-- Right Side Of Navbar -->
+
+                   @if(Auth::user())
+                   <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin') }}">
+                         Admin
+                            </a>
+                   </li>
+               @endif
+                   <li class="nav-item">
+                       <a class="nav-link" href="{{ url('/') }}">Home</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" href="{{Route('About')}}">About</a>
+                   </li>
+
+                   <li class="nav-item">
+                       <a class="nav-link" href="{{Route('contact')}}">Contact</a>
+
+
+
+
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                       <li class="nav-item">
+                           <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            <li class="nav-item">
+                       <li class="nav-item">
                                 @if (Route::has('register'))
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
@@ -63,7 +90,7 @@ use Illuminate\Foundation\Auth\User;
                             <li class="nav-item dropdown">
 
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <span style="color:white; font-size:18px; font-family:'Times New Roman', Times, serif;"  class=" caret">{{ Auth::user()->name }}  </span>
+                                   {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -80,19 +107,81 @@ use Illuminate\Foundation\Auth\User;
                             </li>
 
                         @endguest
-                                <li class="nav-item">
 
 
-
-                                </li>
                     </ul>
                 </div>
             </div>
         </nav>
-<br>
-        <main class="py-4">
+        @if(!Auth::user())
+        <header class="masthead"   style=" height: 60px");>
+            <div class="overlay"></div>
+
+            <div class="container">
+
+
+                <div class="col-lg-8 col-md-10 mx-auto">
+
+
+                    <div class="site-heading">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+@endif
             @yield('content')
-        </main>
+        <footer>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item">
+                                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/Salah1796/Laravel_Plog">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse">
+
+
+                    </i>
+                  </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+           <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+
     </div>
 </body>
 </html>

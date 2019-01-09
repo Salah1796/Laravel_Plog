@@ -6,8 +6,25 @@ use Illuminate\Foundation\Auth\User;
 @extends('layouts.app')
 
 @section('content')
-    <br><br>
-<br>
+    <header   class="masthead"   style=" height:400px;background-image: url({{asset('img/home-bg.jpg')}})">
+        <div class="overlay"></div>
+
+        <div class="container">
+
+
+            <div class="col-lg-8 col-md-10 mx-auto">
+
+
+                <div class="site-heading">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
     <div class="col-lg-8" style="margin: auto;border-width: thick ">
 
         <div class="card mb-8" >

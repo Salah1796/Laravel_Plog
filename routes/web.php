@@ -33,7 +33,16 @@ Route::Post('/upCom/{id}','ComentController@upCom');
 Route::get('/report/{id}','ComentController@ReportCom');
 
 
-//admin
+
+Route::get('contact','HomeController@contact')->name('contact');
+Route::Post('send','HomeController@save_mesage');
+
+Route::get('About','HomeController@About')->name('About');
+
+
+
+
+
 
 Route::get('/admin', 'adminController@index')->name('admin');;
 
@@ -42,8 +51,14 @@ Route::get('/coments', 'adminController@viewComs')->name('viewcoms');
 Route::get('/users', 'adminController@viewusers')->name('viewUsers');
 Route::get('/cats', 'adminController@viewCats')->name('ViewCats');
 Route::get('/Reports', 'adminController@viewReports')->name('viewReports');;
+
 Route::get('/Admin_upPost/{id}', 'PostController@upPost');;
 Route::get('/Admin_delPost/{id}', 'PostController@delPost');
 Route::get('/delCat/{id}', 'adminController@delCat');
 Route::Post('/upCat/{id}', 'adminController@upCat');
 Route::get('/upCat/{id}', 'adminController@upCat');
+Route::get('Admin_deluser/{id}','adminController@delUser');
+Route::get('Admin_toAdm/{id}','adminController@toAdm');
+Route::get('Admin_tosub/{id}','adminController@tosub');
+
+

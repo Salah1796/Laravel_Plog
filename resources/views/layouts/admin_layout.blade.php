@@ -1,7 +1,16 @@
-<?php
+@php
+    use Illuminate\Http\Request;
+    use Illuminate\Foundation\Auth\User;
+   use Illuminate\Support\Facades\Auth;
 
-use Illuminate\Foundation\Auth\User;
-?>
+
+
+@endphp
+
+
+@if (Auth::user()->Role != "Admin")
+    <script>window.location="/";</script>
+    @endif
 <!DOCTYPE html>
 <html lang="en">
 <head>

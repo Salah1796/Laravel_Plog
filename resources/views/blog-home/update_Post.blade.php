@@ -6,10 +6,10 @@ use App\Categorie;
 @section('content')
     <h2 align="center" style="margin-bottom: 20px; font-family: cursive; margin-top:30px">Edit Post</h2>
     <div class="container">
-        <form action="{{url('upPost/'.$post->id)}}" method="POST"  enctype="multipart/form-data" style="align-items:center; margin-left:40px" >
+        <form action="{{url('upPost/'.$post->id)}}"  method="POST"  enctype="multipart/form-data"  class="from" >
 
             {{csrf_field()}}
-            <div class="form-group" >
+            <div class="form-group">
 
                 <label for="post_title">Qoustion Title</label>
                 <input type="text" class="form-control" name="title" value="{{$post->title}}">
@@ -41,6 +41,13 @@ use App\Categorie;
                 <textarea style="max-width: 80%; height: 200px;" class="form-control" name="content">{{$post->body}}</textarea>
                 <span class="error">* </span>
             </div>
+            <div class="form-group" >
+
+                <label  for="post_image">Post Image</label>
+                <input  type="file" class="form-control-file" name="post_image">
+                <span class="error"></span>
+            </div>
+
             <div class="form-group">
                 <input type="submit" name="Save" value="Save" class="btn btn-primary"  >
 

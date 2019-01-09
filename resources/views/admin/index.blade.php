@@ -1,7 +1,4 @@
-@php
 
-
-@endphp
 @extends('layouts.admin_layout')
 @section('content')
 <div id="page-wrapper">

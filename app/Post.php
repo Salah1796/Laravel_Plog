@@ -8,7 +8,7 @@ class Post extends Model
 
 {
 
-  protected $fillable=['body','title','user_id','categorie_id'];
+  protected $fillable=['body','title','user_id','categorie_id','img'];
     public function comments(){
       
       return  $this->hasMany("App\Comment");

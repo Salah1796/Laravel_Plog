@@ -2,8 +2,29 @@
 @extends('layouts.app')
     <!-- Navigation -->
     @section('content')
+        <header class="masthead"   style="background-image: url({{asset('img/home-bg.jpg')}})">
+            <div class="overlay"></div>
+
+            <div class="container">
+
+
+                <div class="col-lg-8 col-md-10 mx-auto">
+
+
+                    <div class="site-heading">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
     <!-- Page Content -->
     <div class="container">
+
 
         <div class="row">
 
@@ -15,20 +36,28 @@
           <!-- Blog Post -->
       
        @foreach ($posts as $post)
-           
+
       <br>
-          <div class="card mb-4">
-            <div class="card-body">
-            <h2 class="card-title">{{$post->title}}
-  @if($post->user->id==Auth::User()->id)
+                  <div class="card mb-4">
+
+              <div class="card-body">
+
+                  <h2 class="card-title">{{$post->title}}
+      @if($post->user->id==Auth::User()->id)
 
         <a style=" margin-left:10px; float: right;font-size: 15px" href="{{url('delPost/'.$post->id)}}">Delete</a>
         <a style="  float: right;font-size: 15px" href="{{url('upPost/'.$post->id)}}">Edit</a>
       @endif
             </h2>
+                  <br>
+                  <img class="card-img-top" src="/storage/post_img/{{$post->img}}" alt="Card image cap">
 
+                  <br>
              <br>
               <p class="card-text">{{$post->body}}</p>
+                  Share on Facebook
+
+
             <a href="/post/{{$post->id}}" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
@@ -37,18 +66,13 @@
             </div>
           </div>
           @endforeach
-        
-        
-          
+
+
+
           
           <!-- Pagination -->
           <ul class="pagination justify-content-center mb-4">
-            <li class="page-item">
-              <a class="page-link" href="#">&larr; Older</a>
-            </li>
-            <li class="page-item disabled">
-              <a class="page-link" href="#">Newer &rarr;</a>
-            </li>
+              {{ $posts->links() }}
           </ul>
 
         </div>
@@ -99,10 +123,7 @@
     <!-- /.container -->
 
     <!-- Footer -->
-    
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     </div>
 
     @endsection

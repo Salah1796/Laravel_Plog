@@ -10,31 +10,39 @@ class userController extends Controller
 {
     public function User_info($id)
     {
+        if(Auth::user()) {
+            $user = User::find($id);
 
-        $user = User::find($id);
-
-        return view('blog-home.user_profile', compact('user'));
-
+            return view('blog-home.user_profile', compact('user'));
+        }
+        else
+            return redirect('/');
     }
 
     public function upUser(Request $request)
     {
-        if ($request->isMethod('POST')) {
-            $user=Auth::user();
-            $user->name=$request['Name'];
-
-            $user->email=$request['Email'];
-
-            $user->save();
-            return redirect('/');
+        if (Auth::user()) {
 
 
-        }
+            if ($request->isMethod('POST')) {
+                $user = Auth::user();
+                $user->name = $request['Name'];
+
+                $user->email = $request['Email'];
+
+                $user->save();
+                return redirect('/');
+
+
+            }
             $user = Auth::user();
             return view('blog-home.update_user', compact('user'));
 
 
         }
+        else
+            return redirect('/');
+    }
 
 }
 

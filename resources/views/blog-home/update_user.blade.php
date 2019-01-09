@@ -23,6 +23,8 @@ use App\Categorie;
 
         </div>
 
+
+
     <!--    <div class="form-group" >
 
            <label for="post_title">Password</label>
